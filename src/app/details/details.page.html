@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      TO-DO App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="body">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>TO-DO details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Title</ion-label>
+        <ion-input type="text" [(ngModel)]="details.title" placeholder="Title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea [(ngModel)]="details.desc" placeholder="Description"></ion-textarea>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button color="danger" (click)= "delete()" *ngIf= "deleteIf()" expand="block">Delete</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="success" (click)= "save()" expand="block">Save</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
